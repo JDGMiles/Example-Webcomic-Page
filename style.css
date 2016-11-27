@@ -1,0 +1,7 @@
+html {display: table; margin: auto;}
+html, body {height: 90%;}
+
+@font-face {font-family: Liberation Serif; src: url(http://jdgmiles.github.io/LiberationSerif.woff);}
+body {color: white; background-color:#000000; font-family: Liberation Serif, Tahoma, Arial, Helvetica, Sans-Serif; vertical-align:middle; display: table-cell;}
+button {color: white; background-color:#000000; font-family: Liberation Serif, Tahoma, Arial, Helvetica, Sans-Serif; font-size:36px; padding:0px 23px 0px 23px;}
+.comictitle {font-size:47px;}

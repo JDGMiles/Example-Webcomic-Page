@@ -1,0 +1,54 @@
+<!DOCTYPE html><html>
+
+  <head>
+    <title>Matt's Webcomic</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico">
+  </head>
+
+<body>
+	<center>
+
+    <table style="padding:0px 80px 0px 80px;">
+      <tr><td id="comictitle" class="comictitle" style="text-align:center">Sunday, October 30<sup>th</sup>, 2016</td></tr>
+      <tr><td><br><center><img id="comicimage" src="Comics/0001.png"></center></td></tr>
+      <tr><td style="text-align:center"><br>
+        <button onclick="first()">First Comic</button>&nbsp;&nbsp;&nbsp;
+        <button id="previousbutton" onclick="previous()">Previous Comic</button>&nbsp;&nbsp;&nbsp;
+        <button id="nextbutton" onclick="next()">Next Comic</button>&nbsp;&nbsp;&nbsp;
+        <button onclick="latest()">Latest Comic</button></td></tr>
+    </table>
+
+	</center>
+</body>
+
+</html>
+
+<script type="text/javascript">
+var comicno=4;
+
+var titles=[];
+titles[1]="Sunday, October 30<sup>th</sup>, 2016";
+titles[2]="Tuesday, November 30<sup>th</sup>, 2016";
+titles[3]="Saturday, November 12<sup>th</sup>, 2016";
+titles[4]="Tuesday, November 15<sup>th</sup>, 2016";
+titles[5]="Sunday, November 20<sup>th</sup>, 2016";
+titles[6]="Wednesady, November 23<sup>rd</sup>, 2016";
+
+function updatecomic(){
+  document.getElementById("comicimage").src="Comics/000"+comicno+".png";
+  document.getElementById("comictitle").innerHTML=titles[comicno];
+  if(comicno==1){document.getElementById("previousbutton").style.color="#222222";}
+  else{document.getElementById("previousbutton").style.color="white";}
+  if(comicno==titles.length-1){document.getElementById("nextbutton").style.color="#222222";}
+  else{document.getElementById("nextbutton").style.color="white";}
+}
+
+function first(){comicno=1; updatecomic();}
+function previous(){if(comicno>1){comicno--;} updatecomic();}
+function next(){if(comicno<titles.length-1){comicno++;} updatecomic();}
+function latest(){comicno=titles.length-1; updatecomic();}
+
+updatecomic();
+
+</script>
