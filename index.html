@@ -25,15 +25,15 @@
 </html>
 
 <script type="text/javascript">
-var comicno=4;
-
 var titles=[];
 titles[1]="Sunday, October 30<sup>th</sup>, 2016";
 titles[2]="Tuesday, November 30<sup>th</sup>, 2016";
 titles[3]="Saturday, November 12<sup>th</sup>, 2016";
 titles[4]="Tuesday, November 15<sup>th</sup>, 2016";
 titles[5]="Sunday, November 20<sup>th</sup>, 2016";
-titles[6]="Wednesady, November 23<sup>rd</sup>, 2016";
+titles[6]="Wednesday, November 23<sup>rd</sup>, 2016";
+
+var comicno=titles.length-1;
 
 function updatecomic(){
   document.getElementById("comicimage").src="Comics/000"+comicno+".png";
