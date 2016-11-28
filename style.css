@@ -3,5 +3,27 @@ html, body {height: 90%;}
 
 @font-face {font-family: Liberation Serif; src: url(../jdgmiles.github.io/LiberationSerif.woff);}
 body {color: white; background-color:#000000; font-family: Liberation Serif, Tahoma, Arial, Helvetica, Sans-Serif; vertical-align:middle; display: table-cell;}
-button {color: white; background-color:#000000; font-family: Liberation Serif, Tahoma, Arial, Helvetica, Sans-Serif; font-size:36px; padding:0px 23px 0px 23px;}
+button {color: white; background-color:#000000; font-family: Liberation Serif, Tahoma, Arial, Helvetica, Sans-Serif; font-size:32px; padding:0px 16px 0px 16px;}
 .comictitle {font-size:47px;}
+
+img[class] {
+  width: 100%;
+}
+
+img[class] {
+  width: 100%;
+}
+
+.container {
+  float: left;
+  width: 40%;
+  margin: 0 30px 20px 0;
+
+  &:nth-child(2n) {
+    clear: left;
+  }
+
+  &:nth-child(2n+1){
+    margin-right: 0;
+  }
+}

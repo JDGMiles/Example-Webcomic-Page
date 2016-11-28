@@ -9,13 +9,16 @@
 <body>
 	<center>
 
-    <table style="padding:0px 80px 0px 80px;">
+    <table>
       <tr><td id="comictitle" class="comictitle" style="text-align:center">Sunday, October 30<sup>th</sup>, 2016</td></tr>
-      <tr><td><br><center><img id="comicimage" src="Comics/0001.png"></center></td></tr>
+      <tr><td style="height:443px; width:1220px; border-style:solid; border-width:1px; border-color:gray;">
+        <center><img id="comicimage" src="Comics/0001.png" style="padding:10px"></center>
+      </td></tr>
       <tr><td style="text-align:center"><br>
-        <button onclick="first()">First Comic</button>&nbsp;&nbsp;&nbsp;
-        <button id="previousbutton" onclick="previous()">Previous Comic</button>&nbsp;&nbsp;&nbsp;
-        <button id="nextbutton" onclick="next()">Next Comic</button>&nbsp;&nbsp;&nbsp;
+        <button onclick="first()">First Comic</button>&nbsp;
+        <button id="previousbutton" onclick="previous()">Previous Comic</button>&nbsp;
+        <button onclick="randomcomic()">Random Comic</button>&nbsp;
+        <button id="nextbutton" onclick="next()">Next Comic</button>&nbsp;
         <button onclick="latest()">Latest Comic</button></td></tr>
     </table>
 
@@ -33,7 +36,12 @@ titles[4]="Tuesday, November 15<sup>th</sup>, 2016";
 titles[5]="Sunday, November 20<sup>th</sup>, 2016";
 titles[6]="Wednesday, November 23<sup>rd</sup>, 2016";
 
+var tall=[];
+for(i=1; i<titles.length; i++){tall[i]=0;}
+tall[4]=1;
+
 var comicno=titles.length-1;
+var temprand=comicno;
 
 function updatecomic(){
   document.getElementById("comicimage").src="Comics/000"+comicno+".png";
@@ -42,10 +50,14 @@ function updatecomic(){
   else{document.getElementById("previousbutton").style.color="white";}
   if(comicno==titles.length-1){document.getElementById("nextbutton").style.color="#222222";}
   else{document.getElementById("nextbutton").style.color="white";}
+  if(tall[comicno]){document.getElementById("comicimage").style.height="420px"; document.getElementById("comicimage").style.width="auto";}
+  else{document.getElementById("comicimage").style.width="1200px"; document.getElementById("comicimage").style.height="auto";}
+  temprand=comicno;
 }
 
 function first(){comicno=1; updatecomic();}
 function previous(){if(comicno>1){comicno--;} updatecomic();}
+function randomcomic(){while(temprand==comicno){temprand=Math.ceil(Math.random()*(titles.length-1))}; comicno=temprand; updatecomic();}
 function next(){if(comicno<titles.length-1){comicno++;} updatecomic();}
 function latest(){comicno=titles.length-1; updatecomic();}
 
